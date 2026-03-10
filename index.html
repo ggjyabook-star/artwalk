@@ -10,6 +10,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://artwalkpv.com">
+  <link rel="preload" as="image" href="https://artwalkpv.com/wp-content/uploads/2025/04/ARTWALK-EXT-2-Grande.jpg">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&display=swap"
     rel="stylesheet">
@@ -127,13 +129,13 @@
   <header class="relative min-h-[100svh] flex flex-col justify-center text-white pb-24 pt-20 bg-brand-dark">
     <!-- Dynamic bg image - Golden/Nightlife Aesthetic -->
     <img src="https://artwalkpv.com/wp-content/uploads/2025/04/ARTWALK-EXT-2-Grande.jpg" alt="ARTWALK Luxury Exterior"
-      class="absolute inset-0 w-full h-full object-cover z-0" loading="eager" decoding="sync">
+      class="absolute inset-0 w-full h-full object-cover z-0" loading="eager" decoding="sync" fetchpriority="high">
     <!-- Dramatic Nightlife Gradient Overlay -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/40 z-10"></div>
 
     <div class="relative z-20 w-full max-w-[720px] mx-auto px-mob">
       <img src="https://artwalkpv.com/wp-content/uploads/2023/08/residences-14.png" alt="ARTWALK Logo"
-        class="max-w-[240px] mb-8 invert brightness-0 opacity-90">
+        class="max-w-[240px] mb-8 invert brightness-0 opacity-90" loading="eager" fetchpriority="high">
 
       <!-- Trust Badges with Art Gallery Mono Style -->
       <div class="flex flex-wrap gap-3 mb-6">
