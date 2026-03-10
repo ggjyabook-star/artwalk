@@ -398,7 +398,7 @@
           class="bg-white shadow-sm border border-neutral-100/50 rounded-3xl relative overflow-hidden h-[280px] group flex flex-col items-center justify-end">
           <div class="absolute inset-0 z-0">
             <button
-              onclick="document.getElementById('floorplan-studio-slider').scrollBy({left: -200, behavior: 'smooth'})"
+              onclick="event.currentTarget.nextElementSibling.nextElementSibling.scrollBy({left: -event.currentTarget.nextElementSibling.nextElementSibling.clientWidth, behavior: 'smooth'})"
               class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-brand-deep w-8 h-8 rounded-full flex items-center justify-center shadow-md border border-neutral-200 transition-all opacity-0 group-hover:opacity-100 active:scale-95 text-[16px]"
               aria-label="Previous">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -406,7 +406,7 @@
               </svg>
             </button>
             <button
-              onclick="document.getElementById('floorplan-studio-slider').scrollBy({left: 200, behavior: 'smooth'})"
+              onclick="event.currentTarget.nextElementSibling.scrollBy({left: event.currentTarget.nextElementSibling.clientWidth, behavior: 'smooth'})"
               class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-brand-deep w-8 h-8 rounded-full flex items-center justify-center shadow-md border border-neutral-200 transition-all opacity-0 group-hover:opacity-100 active:scale-95 text-[16px]"
               aria-label="Next">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -452,14 +452,16 @@
         <div
           class="bg-white shadow-sm border border-neutral-100/50 rounded-3xl relative overflow-hidden h-[280px] group flex flex-col items-center justify-end">
           <div class="absolute inset-0 z-0">
-            <button onclick="document.getElementById('floorplan-1br-slider').scrollBy({left: -200, behavior: 'smooth'})"
+            <button
+              onclick="event.currentTarget.nextElementSibling.nextElementSibling.scrollBy({left: -event.currentTarget.nextElementSibling.nextElementSibling.clientWidth, behavior: 'smooth'})"
               class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-brand-deep w-8 h-8 rounded-full flex items-center justify-center shadow-md border border-neutral-200 transition-all opacity-0 group-hover:opacity-100 active:scale-95 text-[16px]"
               aria-label="Previous">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
               </svg>
             </button>
-            <button onclick="document.getElementById('floorplan-1br-slider').scrollBy({left: 200, behavior: 'smooth'})"
+            <button
+              onclick="event.currentTarget.nextElementSibling.scrollBy({left: event.currentTarget.nextElementSibling.clientWidth, behavior: 'smooth'})"
               class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-brand-deep w-8 h-8 rounded-full flex items-center justify-center shadow-md border border-neutral-200 transition-all opacity-0 group-hover:opacity-100 active:scale-95 text-[16px]"
               aria-label="Next">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -504,14 +506,16 @@
         <div
           class="bg-white shadow-sm border border-neutral-100/50 rounded-3xl relative overflow-hidden h-[280px] group flex flex-col items-center justify-end">
           <div class="absolute inset-0 z-0">
-            <button onclick="document.getElementById('floorplan-2br-slider').scrollBy({left: -200, behavior: 'smooth'})"
+            <button
+              onclick="event.currentTarget.nextElementSibling.nextElementSibling.scrollBy({left: -event.currentTarget.nextElementSibling.nextElementSibling.clientWidth, behavior: 'smooth'})"
               class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-brand-deep w-8 h-8 rounded-full flex items-center justify-center shadow-md border border-neutral-200 transition-all opacity-0 group-hover:opacity-100 active:scale-95 text-[16px]"
               aria-label="Previous">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
               </svg>
             </button>
-            <button onclick="document.getElementById('floorplan-2br-slider').scrollBy({left: 200, behavior: 'smooth'})"
+            <button
+              onclick="event.currentTarget.nextElementSibling.scrollBy({left: event.currentTarget.nextElementSibling.clientWidth, behavior: 'smooth'})"
               class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-brand-deep w-8 h-8 rounded-full flex items-center justify-center shadow-md border border-neutral-200 transition-all opacity-0 group-hover:opacity-100 active:scale-95 text-[16px]"
               aria-label="Next">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -758,7 +762,7 @@
         <!-- Vertical Video Testimonial -->
         <div
           class="bg-black flex flex-col justify-center items-center rounded-3xl flex-none w-[85vw] md:w-auto snap-center relative overflow-hidden h-[400px] md:h-auto md:min-h-[280px] shadow-sm order-2 md:order-none">
-          <video class="absolute inset-0 w-full h-full object-cover" controls playsinline>
+          <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
             <source src="A1.mp4" type="video/mp4">
           </video>
         </div>
