@@ -128,12 +128,16 @@
   <!-- 1. HERO SECTION -->
   <header class="relative min-h-[100svh] flex flex-col justify-center text-white pb-24 pt-20 bg-brand-dark">
     <!-- Dynamic bg image - Golden/Nightlife Aesthetic -->
-    <img src="https://artwalkpv.com/wp-content/uploads/2025/04/ARTWALK-EXT-2-Grande.jpg" alt="ARTWALK Luxury Exterior"
-      class="absolute inset-0 w-full h-full object-cover z-0" loading="eager" decoding="sync" fetchpriority="high">
-    <!-- Dramatic Nightlife Gradient Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/40 z-10"></div>
+    <img src="hero-render.jpg" alt="ARTWALK Luxury Exterior"
+      class="absolute inset-0 w-full h-full object-cover object-[70%_20%] md:object-[center_30%] z-0" loading="eager"
+      decoding="sync" fetchpriority="high">
+    <!-- Darker gradient overlay for excellent text readability -->
+    <div class="absolute inset-0 bg-black/40 z-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10 w-full md:w-[70%]">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-transparent z-10 h-[60%]"></div>
 
-    <div class="relative z-20 w-full max-w-[720px] mx-auto px-mob">
+    <div class="relative z-20 w-full max-w-[720px] mx-auto px-mob mt-[-4rem] md:mt-0">
       <img src="https://artwalkpv.com/wp-content/uploads/2023/08/residences-14.png" alt="ARTWALK Logo"
         class="max-w-[240px] mb-8 invert brightness-0 opacity-90" loading="eager" fetchpriority="high">
 
@@ -150,7 +154,9 @@
           Summer 2026</span>
       </div>
 
-      <h1 class="text-[38px] md:text-[56px] leading-[1.05] font-serif tracking-tighter mb-5 text-brand-vibrant">Finished
+      <h1
+        class="text-[38px] md:text-[56px] leading-[1.05] font-sans font-normal tracking-tight mb-5 text-brand-vibrant">
+        Finished
         Structure. Model Unit Ready<span class="text-white">.</span></h1>
 
       <p class="text-[17px] md:text-[19px] text-gray-300 mb-8 font-sans font-light tracking-wide leading-relaxed">
@@ -311,8 +317,30 @@
           </div>
           <div
             class="flex-none w-[90%] md:w-[70%] snap-center aspect-[4/3] md:aspect-video relative rounded-2xl overflow-hidden shadow-sm">
-            <img src="model-unit-5.jpg" class="w-full h-full object-cover" alt="Model Unit Lounge" loading="lazy">
+            <img src="model-unit-6.jpg" class="w-full h-full object-cover" alt="Model Unit Additional View"
+              loading="lazy">
           </div>
+          <div
+            class="flex-none w-[90%] md:w-[70%] snap-center aspect-[4/3] md:aspect-video relative rounded-2xl overflow-hidden shadow-sm">
+            <img src="model-unit-7.jpg" class="w-full h-full object-cover" alt="Model Unit Additional View"
+              loading="lazy">
+          </div>
+          <div
+            class="flex-none w-[90%] md:w-[70%] snap-center aspect-[4/3] md:aspect-video relative rounded-2xl overflow-hidden shadow-sm">
+            <img src="model-unit-8.jpg" class="w-full h-full object-cover" alt="Model Unit Additional View"
+              loading="lazy">
+          </div>
+          <div
+            class="flex-none w-[90%] md:w-[70%] snap-center aspect-[4/3] md:aspect-video relative rounded-2xl overflow-hidden shadow-sm">
+            <img src="model-unit-9.jpg" class="w-full h-full object-cover" alt="Model Unit Additional View"
+              loading="lazy">
+          </div>
+          <div
+            class="flex-none w-[90%] md:w-[70%] snap-center aspect-[4/3] md:aspect-video relative rounded-2xl overflow-hidden shadow-sm">
+            <img src="model-unit-10.jpg" class="w-full h-full object-cover" alt="Model Unit Additional View"
+              loading="lazy">
+          </div>
+
         </div>
         <button
           onclick="document.getElementById('track-1').scrollBy({left: window.innerWidth * 0.7, behavior: 'smooth'})"
@@ -987,7 +1015,7 @@
   </div>
 
   <!-- 9. FOOTER -->
-  <footer class="bg-brand-dark py-12 md:py-16 text-center">
+  <footer class="bg-brand-dark pt-12 pb-28 md:py-16 text-center">
     <div class="max-w-[1200px] mx-auto px-mob flex flex-col items-center justify-center gap-2">
       <p class="font-sans font-light text-white/40 text-[11px] tracking-widest uppercase mb-1">Powered by</p>
       <a href="https://mexlife.com/" target="_blank" rel="noopener" class="flex flex-col items-center group">
