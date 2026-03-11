@@ -12,6 +12,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Hero Ken Burns Slider Logic
+  const heroImages = document.querySelectorAll('.ken-burns-img');
+  if (heroImages.length > 0) {
+    let currentHeroIndex = 0;
+
+    setInterval(() => {
+      // Remove active class from current image
+      heroImages[currentHeroIndex].classList.remove('active');
+
+      // Move to next image, looping back to start if at the end
+      currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
+
+      // Add active class to new image
+      heroImages[currentHeroIndex].classList.add('active');
+    }, 6000); // Change image every 6 seconds
+  }
+
   // Modals Logic
   const modals = document.querySelectorAll('.modal-overlay');
   const modalTriggers = document.querySelectorAll('[data-modal]');
@@ -41,18 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Carousel Logic
   const carousels = document.querySelectorAll('.carousel');
-  
+
   carousels.forEach(carousel => {
     const track = carousel.querySelector('.carousel-track');
     const slides = carousel.querySelectorAll('.carousel-slide');
     const counter = carousel.querySelector('.counter-text');
     const btnPrev = carousel.querySelector('.btn-prev');
     const btnNext = carousel.querySelector('.btn-next');
-    
+
     let currentIndex = 0;
-    
+
     const updateCounter = () => {
-      if(counter) counter.textContent = `${currentIndex + 1} / ${slides.length}`;
+      if (counter) counter.textContent = `${currentIndex + 1} / ${slides.length}`;
     };
 
     track.addEventListener('scroll', () => {
@@ -62,15 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
       updateCounter();
     });
 
-    if(btnPrev && btnNext) {
+    if (btnPrev && btnNext) {
       btnNext.addEventListener('click', () => {
-        if(currentIndex < slides.length - 1) {
+        if (currentIndex < slides.length - 1) {
           slides[currentIndex + 1].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         }
       });
-      
+
       btnPrev.addEventListener('click', () => {
-        if(currentIndex > 0) {
+        if (currentIndex > 0) {
           slides[currentIndex - 1].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         }
       });
@@ -125,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const originalText = btn.textContent;
       btn.textContent = 'Sending...';
       btn.style.opacity = '0.7';
-      
+
       setTimeout(() => {
         btn.textContent = 'Success! Check your WhatsApp/Email.';
         btn.style.backgroundColor = 'var(--whatsapp)';
