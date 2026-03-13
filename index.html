@@ -175,54 +175,56 @@
       class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent h-[60%] pointer-events-none z-[2]">
     </div>
 
-    <div class="relative z-20 w-full max-w-[720px] mx-auto px-mob mt-[-5rem] md:mt-0">
+    <!-- Added top padding offset for mobile to center better visually -->
+    <div class="relative z-20 w-full max-w-[720px] mx-auto px-mob mt-[-2rem] md:mt-0">
       <img src="https://artwalkpv.com/wp-content/uploads/2023/08/residences-14.png" alt="ARTWALK Logo"
-        class="max-w-[180px] md:max-w-[240px] mb-5 md:mb-8 invert brightness-0 opacity-90" loading="eager" fetchpriority="high">
+        class="max-w-[190px] md:max-w-[240px] mb-8 md:mb-8 invert brightness-0 opacity-90" loading="eager" fetchpriority="high">
 
-      <!-- Trust Badges with Art Gallery Mono Style -->
-      <div class="flex flex-wrap gap-2 md:gap-3 mb-4 md:mb-6">
+      <!-- Trust Badges -->
+      <div class="flex flex-wrap gap-2 md:gap-3 mb-6 md:mb-6">
         <span
-          class="border border-brand-gold/50 text-brand-gold px-2 py-0.5 md:px-3 md:py-1 font-mono uppercase text-[9px] md:text-xs tracking-widest rounded-sm bg-black/20 backdrop-blur-sm">Structure
+          class="border border-brand-gold/50 text-brand-gold px-2.5 py-1 md:px-3 md:py-1 font-mono uppercase text-[9px] md:text-xs tracking-widest rounded-sm bg-black/20 backdrop-blur-sm">Structure
           100% Complete</span>
         <span
-          class="border border-brand-gold/50 text-brand-gold px-2 py-0.5 md:px-3 md:py-1 font-mono uppercase text-[9px] md:text-xs tracking-widest rounded-sm bg-black/20 backdrop-blur-sm">Model
+          class="border border-brand-gold/50 text-brand-gold px-2.5 py-1 md:px-3 md:py-1 font-mono uppercase text-[9px] md:text-xs tracking-widest rounded-sm bg-black/20 backdrop-blur-sm">Model
           Unit Open</span>
         <span
-          class="border border-brand-gold/50 text-brand-gold px-2 py-0.5 md:px-3 md:py-1 font-mono uppercase text-[9px] md:text-xs tracking-widest rounded-sm bg-black/20 backdrop-blur-sm">Delivery:
+          class="border border-brand-gold/50 text-brand-gold px-2.5 py-1 md:px-3 md:py-1 font-mono uppercase text-[9px] md:text-xs tracking-widest rounded-sm bg-black/20 backdrop-blur-sm">Delivery:
           Summer 2026</span>
       </div>
 
       <h1
-        class="text-[30px] md:text-[56px] leading-[1.05] font-sans font-normal tracking-tight mb-3 md:mb-5 text-brand-vibrant">
+        class="text-[36px] md:text-[56px] leading-[1.05] font-sans font-normal tracking-tight mb-5 md:mb-5 text-brand-vibrant">
         Finished Structure. Model Unit Ready<span class="text-white">.</span></h1>
 
-      <p class="text-[15px] md:text-[19px] text-gray-300 mb-5 md:mb-8 font-sans font-light tracking-wide leading-snug md:leading-relaxed">
+      <!-- Adjusted leading and margin to breathe -->
+      <p class="text-[16px] md:text-[19px] text-gray-300 mb-8 md:mb-8 font-sans font-light tracking-wide leading-relaxed md:leading-relaxed">
         Boutique residences in Puerto Vallarta’s Art District—4 flat blocks to the Malecón + beach, with premium
         finishes and a lifestyle you can walk to.</p>
 
-      <ul class="space-y-2 md:space-y-4 mb-6 md:mb-10 font-sans font-light text-[14px] md:text-[16px]">
-        <li class="relative pl-6 md:pl-7 text-gray-200"><span class="absolute left-0 text-brand-vibrant font-bold">✓</span> Tour
+      <!-- HIDDEN ON MOBILE: This removes the visual clutter while holding onto the value for desktop readers -->
+      <ul class="hidden md:block space-y-4 mb-10 font-sans font-light text-[16px]">
+        <li class="relative pl-7 text-gray-200"><span class="absolute left-0 text-brand-vibrant font-bold">✓</span> Tour
           the completed model unit (in-person or video tour).</li>
-        <li class="relative pl-6 md:pl-7 text-gray-200"><span class="absolute left-0 text-brand-vibrant font-bold">✓</span>
+        <li class="relative pl-7 text-gray-200"><span class="absolute left-0 text-brand-vibrant font-bold">✓</span>
           Studios to 2BR + Flex — limited remaining inventory.</li>
-        <li class="relative pl-6 md:pl-7 text-gray-200"><span class="absolute left-0 text-brand-vibrant font-bold">✓</span>
+        <li class="relative pl-7 text-gray-200"><span class="absolute left-0 text-brand-vibrant font-bold">✓</span>
           LEED®-driven design + turnkey comfort.</li>
       </ul>
 
-      <div class="flex flex-col md:flex-row gap-3 md:gap-4 mb-5 md:mb-6">
+      <div class="flex flex-col sm:flex-row gap-3 md:gap-4 mb-8 md:mb-6">
         <button
-          class="inline-flex items-center justify-center min-h-[48px] md:min-h-[52px] px-8 rounded-full font-sans font-semibold text-[14px] md:text-[15px] uppercase tracking-wider transition-all duration-300 ease-in-out w-full md:w-auto active:scale-[0.98] bg-transparent text-white border border-white hover:bg-white hover:text-brand-dark"
-          data-modal="modal-schedule" data-source="Hero — Tour the Model Unit">Tour the Model Unit</button>
-        <button
-          class="inline-flex items-center justify-center min-h-[48px] md:min-h-[52px] px-8 rounded-full font-sans font-semibold text-[14px] md:text-[15px] uppercase tracking-wider transition-all duration-300 ease-in-out w-full md:w-auto active:scale-[0.98] bg-brand-vibrant text-brand-dark hover:bg-brand-vibrantHover hover:shadow-lg hover:shadow-brand-vibrant/30 border border-transparent"
+          class="inline-flex items-center justify-center min-h-[50px] md:min-h-[52px] px-8 rounded-full font-sans font-semibold text-[14px] md:text-[15px] uppercase tracking-wider transition-all duration-300 ease-in-out w-full sm:w-auto active:scale-[0.98] bg-brand-vibrant text-brand-dark hover:bg-brand-vibrantHover hover:shadow-lg hover:shadow-brand-vibrant/30 border border-transparent"
           data-modal="modal-pricing" data-source="Hero — Get Pricing + Floorplans">Get Pricing + Floorplans</button>
+        <button
+          class="inline-flex items-center justify-center min-h-[50px] md:min-h-[52px] px-8 rounded-full font-sans font-semibold text-[14px] md:text-[15px] uppercase tracking-wider transition-all duration-300 ease-in-out w-full sm:w-auto active:scale-[0.98] bg-transparent text-white border border-white hover:bg-white hover:text-brand-dark"
+          data-modal="modal-schedule" data-source="Hero — Tour the Model Unit">Tour the Model Unit</button>
       </div>
 
       <p
-        class="text-[13px] md:text-[15px] text-white font-sans font-medium tracking-wider uppercase leading-snug md:leading-relaxed mt-4 md:mt-8 border-l-2 border-brand-vibrant pl-3 md:pl-4 drop-shadow-lg">
+        class="text-[13px] md:text-[15px] text-white font-sans font-medium tracking-wider uppercase leading-snug md:leading-relaxed mt-4 md:mt-8 border-l-2 border-brand-vibrant pl-4 drop-shadow-lg">
         Starting from $287,559 USD • 1 Bed / 2 Bath<br>
-        <span class="text-[11px] md:text-[13px] text-gray-300 font-normal mt-1 md:mt-0 block md:inline">Limited availability / No spam. Your info stays
-          private.</span>
+        <span class="text-[11.5px] md:text-[13px] text-gray-300 font-normal mt-1 md:mt-0 block md:inline tracking-wide">Limited availability / No spam. Your info stays private.</span>
       </p>
     </div>
   </header>
