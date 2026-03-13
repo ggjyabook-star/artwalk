@@ -18,18 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentHeroIndex = 0;
 
     setInterval(() => {
-      // Remove active class from current image
       heroImages[currentHeroIndex].classList.remove('active');
-
-      // Move to next image, looping back to start if at the end
       currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
-
-      // Add active class to new image
       heroImages[currentHeroIndex].classList.add('active');
-    }, 6000); // Change image every 6 seconds
+    }, 6000);
   }
 
-  // Modals Logic
+  // Modals Logic — with data-source wiring
   const modals = document.querySelectorAll('.modal-overlay');
   const modalTriggers = document.querySelectorAll('[data-modal]');
   const closeBtns = document.querySelectorAll('.modal-close');
@@ -38,21 +33,30 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const modalId = btn.getAttribute('data-modal');
-      document.getElementById(modalId).classList.add('active');
+      const source = btn.getAttribute('data-source') || btn.textContent.trim();
+
+      // Open modal
+      const modal = document.getElementById(modalId);
+      modal.classList.add('active');
+      document.body.classList.add('modal-open');
+
+      // Write the source label into the hidden field of that modal's form
+      // modal-pricing → source-pricing, modal-schedule → source-schedule
+      const sourceFieldId = 'source-' + modalId.replace('modal-', '');
+      const sourceField = document.getElementById(sourceFieldId);
+      if (sourceField) sourceField.value = source;
     });
   });
 
-  closeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.closest('.modal-overlay').classList.remove('active');
-    });
-  });
+  const closeModal = () => {
+    modals.forEach(m => m.classList.remove('active'));
+    document.body.classList.remove('modal-open');
+  };
 
+  closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
   modals.forEach(modal => {
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-      }
+      if (e.target === modal) closeModal();
     });
   });
 
@@ -123,8 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = item.querySelector('.faq-btn');
     btn.addEventListener('click', () => {
       const isActive = item.classList.contains('active');
-      // Optional: Close others
-      // faqItems.forEach(faq => faq.classList.remove('active'));
       if (!isActive) {
         item.classList.add('active');
       } else {
@@ -133,28 +135,85 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Form submission handling (Mock for now)
-  const forms = document.querySelectorAll('form');
-  forms.forEach(form => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
-      btn.textContent = 'Sending...';
-      btn.style.opacity = '0.7';
+  // ─── REAL FORM SUBMISSION → /api/contact ───────────────────────────────────
+  async function submitForm(formEl, btnEl) {
+    const originalText = btnEl.textContent;
+
+    // Read fields
+    const data = {
+      name:   formEl.querySelector('[name="name"]')?.value?.trim(),
+      email:  formEl.querySelector('[name="email"]')?.value?.trim(),
+      phone:  formEl.querySelector('[name="phone"]')?.value?.trim(),
+      source: formEl.querySelector('[name="source"]')?.value || 'Website form',
+      tourPreference: formEl.querySelector('[name="tourPreference"]')?.value || null,
+    };
+
+    // Loading state
+    btnEl.textContent = 'Sending…';
+    btnEl.disabled = true;
+    btnEl.style.opacity = '0.7';
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const json = await res.json();
+
+      if (res.ok && json.ok) {
+        // Success
+        btnEl.textContent = '✓ Sent! We\'ll be in touch soon.';
+        btnEl.style.opacity = '1';
+        btnEl.style.backgroundColor = '#25D366'; // whatsapp green
+        btnEl.style.borderColor = 'transparent';
+
+        setTimeout(() => {
+          formEl.closest('.modal-overlay')?.classList.remove('active');
+          document.body.classList.remove('modal-open');
+          formEl.reset();
+          btnEl.textContent = originalText;
+          btnEl.style.backgroundColor = '';
+          btnEl.style.borderColor = '';
+          btnEl.disabled = false;
+        }, 2800);
+      } else {
+        throw new Error(json.error || 'Unknown error');
+      }
+    } catch (err) {
+      console.error('Form submission error:', err);
+      btnEl.textContent = 'Error — try WhatsApp instead';
+      btnEl.style.opacity = '1';
+      btnEl.style.backgroundColor = '#e53e3e';
 
       setTimeout(() => {
-        btn.textContent = 'Success! Check your WhatsApp/Email.';
-        btn.style.backgroundColor = 'var(--whatsapp)';
-        setTimeout(() => {
-          form.closest('.modal-overlay').classList.remove('active');
-          btn.textContent = originalText;
-          btn.style.backgroundColor = '';
-          btn.style.opacity = '1';
-          form.reset();
-        }, 2500);
-      }, 1500);
+        btnEl.textContent = originalText;
+        btnEl.style.backgroundColor = '';
+        btnEl.disabled = false;
+        btnEl.style.opacity = '1';
+      }, 3500);
+    }
+  }
+
+  // Attach to both forms
+  const formPricing  = document.getElementById('form-pricing');
+  const formSchedule = document.getElementById('form-schedule');
+
+  if (formPricing) {
+    formPricing.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitForm(formPricing, document.getElementById('btn-pricing'));
     });
-  });
+  }
+
+  if (formSchedule) {
+    formSchedule.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitForm(formSchedule, document.getElementById('btn-schedule'));
+    });
+  }
 
 });
+
+
