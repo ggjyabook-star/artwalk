@@ -424,7 +424,7 @@
             <div class="group cursor-default">
               <div class="flex justify-between items-baseline mb-3">
                 <span class="font-sans font-medium text-[13px] uppercase tracking-[0.2em] text-brand-deep transition-colors group-hover:text-brand-vibrant">Structure</span>
-                <span class="font-serif italic text-[18px] md:text-[20px] text-brand-deep transition-colors group-hover:text-brand-vibrant">100%</span>
+                <span class="font-sans font-medium text-[18px] md:text-[20px] text-brand-deep transition-colors group-hover:text-brand-vibrant tracking-wider">100%</span>
               </div>
               <div class="h-[2px] w-full bg-neutral-100 rounded-full overflow-hidden">
                 <div class="h-full bg-brand-vibrant rounded-full shadow-[0_0_10px_rgba(164,214,28,0.5)]" style="width: 100%;"></div>
@@ -434,7 +434,7 @@
             <div class="group cursor-default">
               <div class="flex justify-between items-baseline mb-3">
                 <span class="font-sans font-medium text-[13px] uppercase tracking-[0.2em] text-brand-deep transition-colors group-hover:text-brand-vibrant">Interiors</span>
-                <span class="font-serif italic text-[18px] md:text-[20px] text-brand-deep transition-colors group-hover:text-brand-vibrant">40%</span>
+                <span class="font-sans font-medium text-[18px] md:text-[20px] text-brand-deep transition-colors group-hover:text-brand-vibrant tracking-wider">40%</span>
               </div>
               <div class="h-[2px] w-full bg-neutral-100 rounded-full overflow-hidden">
                 <div class="h-full bg-brand-vibrant rounded-full" style="width: 40%;"></div>
@@ -444,7 +444,7 @@
             <div class="group cursor-default">
               <div class="flex justify-between items-baseline mb-3">
                 <span class="font-sans font-medium text-[13px] uppercase tracking-[0.2em] text-brand-deep transition-colors group-hover:text-brand-vibrant">Amenities</span>
-                <span class="font-serif italic text-[18px] md:text-[20px] text-brand-deep transition-colors group-hover:text-brand-vibrant">30%</span>
+                <span class="font-sans font-medium text-[18px] md:text-[20px] text-brand-deep transition-colors group-hover:text-brand-vibrant tracking-wider">30%</span>
               </div>
               <div class="h-[2px] w-full bg-neutral-100 rounded-full overflow-hidden">
                 <div class="h-full bg-brand-vibrant rounded-full" style="width: 30%;"></div>
@@ -1035,32 +1035,31 @@
   <!-- MODALS (Hidden by default) -->
 
   <!-- Pricing & Floorplans Modal -->
-  <div class="modal-overlay fixed inset-0 bg-black/70 backdrop-blur-sm z-[1000] flex items-center justify-center p-mob"
+  <div class="modal-overlay fixed inset-0 bg-black/70 backdrop-blur-md z-[1000] flex items-center justify-center p-mob"
     id="modal-pricing">
-    <div class="modal-content bg-white w-full max-w-[480px] p-6 md:p-8 rounded-none relative">
+    <div class="modal-content bg-white w-full max-w-[480px] p-6 md:p-10 rounded-3xl relative shadow-[0_30px_60px_rgba(0,0,0,0.3)]">
       <button
-        class="modal-close absolute top-4 right-4 text-gray-400 hover:text-black text-[28px] leading-none">&times;</button>
-      <h2 class="text-[24px] mb-2 font-serif font-medium text-brand-dark">Unlock Pricing + Floorplans</h2>
-      <p class="text-gray-500 font-sans text-[15px] mb-6">Immediate access to the full layout set and availability. No
-        spam, ever.</p>
+        class="modal-close absolute top-5 right-5 w-10 h-10 flex items-center justify-center rounded-full bg-neutral-100 text-brand-dark hover:bg-brand-vibrant hover:text-brand-dark transition-colors text-[24px] leading-none">&times;</button>
+      <h2 class="text-[28px] md:text-[32px] mb-3 font-sans font-normal tracking-tight text-brand-dark leading-tight">Unlock Pricing + Floorplans<span class="text-brand-vibrant">.</span></h2>
+      <p class="text-brand-text font-sans font-light tracking-wide text-[15px] mb-8 leading-relaxed">Immediate access to the full layout set and availability. No spam, ever.</p>
 
       <form id="form-pricing">
         <input type="hidden" name="source" id="source-pricing" value="">
-        <div class="space-y-4 font-sans">
+        <div class="space-y-5 font-sans">
           <div>
-            <label class="block text-[14px] font-semibold mb-1">First Name</label>
+            <label class="block text-[12px] font-sans font-medium uppercase tracking-[0.1em] text-brand-text mb-2">First Name</label>
             <input type="text" name="name" required
-              class="w-full border border-gray-300 px-4 py-3 bg-brand-bg focus:outline-none focus:border-brand">
+              class="w-full border border-gray-200 rounded-xl px-5 py-4 bg-neutral-50/50 focus:outline-none focus:border-brand-vibrant focus:ring-1 focus:ring-brand-vibrant transition-all">
           </div>
           <div>
-            <label class="block text-[14px] font-semibold mb-1">Email Address</label>
+            <label class="block text-[12px] font-sans font-medium uppercase tracking-[0.1em] text-brand-text mb-2">Email Address</label>
             <input type="email" name="email" required
-              class="w-full border border-gray-300 px-4 py-3 bg-brand-bg focus:outline-none focus:border-brand">
+              class="w-full border border-gray-200 rounded-xl px-5 py-4 bg-neutral-50/50 focus:outline-none focus:border-brand-vibrant focus:ring-1 focus:ring-brand-vibrant transition-all">
           </div>
           <div>
-            <label class="block text-[14px] font-semibold mb-1">WhatsApp / Phone</label>
+            <label class="block text-[12px] font-sans font-medium uppercase tracking-[0.1em] text-brand-text mb-2">WhatsApp / Phone</label>
             <input type="tel" name="phone" required
-              class="w-full border border-gray-300 px-4 py-3 bg-brand-bg focus:outline-none focus:border-brand">
+              class="w-full border border-gray-200 rounded-xl px-5 py-4 bg-neutral-50/50 focus:outline-none focus:border-brand-vibrant focus:ring-1 focus:ring-brand-vibrant transition-all">
           </div>
           <button type="submit" id="btn-pricing" class="w-full inline-flex items-center justify-center min-h-[56px] px-8 rounded-full font-sans font-bold text-[13px] uppercase tracking-[0.15em] transition-all duration-300 ease-in-out active:scale-[0.98] bg-brand-vibrant text-brand-dark hover:bg-brand-vibrantHover hover:shadow-xl hover:shadow-brand-vibrant/40 hover:-translate-y-0.5 border border-transparent mt-4">Get The List Now</button>
         </div>
@@ -1069,37 +1068,36 @@
   </div>
 
   <!-- Schedule Tour Modal -->
-  <div class="modal-overlay fixed inset-0 bg-black/70 backdrop-blur-sm z-[1000] flex items-center justify-center p-mob"
+  <div class="modal-overlay fixed inset-0 bg-black/70 backdrop-blur-md z-[1000] flex items-center justify-center p-mob"
     id="modal-schedule">
-    <div class="modal-content bg-white w-full max-w-[480px] p-6 md:p-8 rounded-none relative">
+    <div class="modal-content bg-white w-full max-w-[480px] p-6 md:p-10 rounded-3xl relative shadow-[0_30px_60px_rgba(0,0,0,0.3)]">
       <button
-        class="modal-close absolute top-4 right-4 text-gray-400 hover:text-black text-[28px] leading-none">&times;</button>
-      <h2 class="text-[24px] mb-2 font-serif font-medium text-brand-dark">Schedule a Tour</h2>
-      <p class="text-gray-500 font-sans text-[15px] mb-6">See the completed model unit and finishes. Choose in-person or
-        remote video tour.</p>
+        class="modal-close absolute top-5 right-5 w-10 h-10 flex items-center justify-center rounded-full bg-neutral-100 text-brand-dark hover:bg-brand-vibrant hover:text-brand-dark transition-colors text-[24px] leading-none">&times;</button>
+      <h2 class="text-[28px] md:text-[32px] mb-3 font-sans font-normal tracking-tight text-brand-dark leading-tight">Schedule a Tour<span class="text-brand-vibrant">.</span></h2>
+      <p class="text-brand-text font-sans font-light tracking-wide text-[15px] mb-8 leading-relaxed">See the completed model unit and finishes. Choose in-person or remote video tour.</p>
 
       <form id="form-schedule">
         <input type="hidden" name="source" id="source-schedule" value="">
-        <div class="space-y-4 font-sans">
+        <div class="space-y-5 font-sans">
           <div>
-            <label class="block text-[14px] font-semibold mb-1">Name</label>
+            <label class="block text-[12px] font-sans font-medium uppercase tracking-[0.1em] text-brand-text mb-2">Name</label>
             <input type="text" name="name" required
-              class="w-full border border-gray-300 px-4 py-3 bg-brand-bg focus:outline-none focus:border-brand">
+              class="w-full border border-gray-200 rounded-xl px-5 py-4 bg-neutral-50/50 focus:outline-none focus:border-brand-vibrant focus:ring-1 focus:ring-brand-vibrant transition-all">
           </div>
           <div>
-            <label class="block text-[14px] font-semibold mb-1">Email Address</label>
+            <label class="block text-[12px] font-sans font-medium uppercase tracking-[0.1em] text-brand-text mb-2">Email Address</label>
             <input type="email" name="email" required
-              class="w-full border border-gray-300 px-4 py-3 bg-brand-bg focus:outline-none focus:border-brand">
+              class="w-full border border-gray-200 rounded-xl px-5 py-4 bg-neutral-50/50 focus:outline-none focus:border-brand-vibrant focus:ring-1 focus:ring-brand-vibrant transition-all">
           </div>
           <div>
-            <label class="block text-[14px] font-semibold mb-1">WhatsApp / Phone</label>
+            <label class="block text-[12px] font-sans font-medium uppercase tracking-[0.1em] text-brand-text mb-2">WhatsApp / Phone</label>
             <input type="tel" name="phone" required
-              class="w-full border border-gray-300 px-4 py-3 bg-brand-bg focus:outline-none focus:border-brand">
+              class="w-full border border-gray-200 rounded-xl px-5 py-4 bg-neutral-50/50 focus:outline-none focus:border-brand-vibrant focus:ring-1 focus:ring-brand-vibrant transition-all">
           </div>
           <div>
-            <label class="block text-[14px] font-semibold mb-1">Tour Preference</label>
+            <label class="block text-[12px] font-sans font-medium uppercase tracking-[0.1em] text-brand-text mb-2">Tour Preference</label>
             <select name="tourPreference"
-              class="w-full border border-gray-300 px-4 py-3 bg-brand-bg focus:outline-none focus:border-brand appearance-none rounded-none">
+              class="w-full border border-gray-200 rounded-xl px-5 py-4 bg-neutral-50/50 focus:outline-none focus:border-brand-vibrant focus:ring-1 focus:ring-brand-vibrant transition-all appearance-none cursor-pointer">
               <option>In-Person (Puerto Vallarta)</option>
               <option>Guided Video walkthrough</option>
             </select>
